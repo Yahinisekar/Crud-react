@@ -19,14 +19,25 @@ text-shadow: red ;
 } 
 .card{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    transition:2s ease-in-out all;
-    background-color:#f1e6d1;
+    transition:0.2s all ease-in-out ;
+    background-color:white;
 }
-.navbar{
+.card:hover{
+    transform:scale(1.01);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.num{
     background-color:#112A46;
+    width:100%;
+    /* padding-right:0 ; */
 }
 .navbar-brand{
     font-size: 40px;
     font-weight: 500;
     color:whitesmoke;
+}
+@media screen and (min-width:768px){
+    .userWidth{
+        width:30rem;
+    }
 }

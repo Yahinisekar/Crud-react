@@ -9,7 +9,7 @@ const Navbar = () => {
     //navigation bar
     <>
       
-      <div className="container-fluid sticky-top p-0">
+      <div className="container-fluid num sticky-top p-0">
         <nav className="navbar ">
           <div className="container-fluid">
             <a className="navbar-brand nav-profile" href="#">

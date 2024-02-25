@@ -43,11 +43,11 @@ const AddUser = () => {
     return (
       //Form with all the necessary fields for adding a new user
     <form
-      className="container mt-5 text-center"
-      style={{ width: "30rem" }}
+      className="container mt-5 text-center userWidth"
+      // style={{ width: "30rem" }}
       onSubmit={handleSubmit}
     >
-      <div className="row mb-5">
+        <div className="row mb-5">
         <label htmlFor="name" className="col-sm-2 col-form-label">
           Name:
         </label>
