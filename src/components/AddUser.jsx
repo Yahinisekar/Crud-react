@@ -9,12 +9,7 @@ const AddUser = () => {
     const navigate = useNavigate();
     //using useState to manage the state of the input fields
   const [createData, setCreateData] = useState({
-    name: "",
-    email: "",
-    website: "",
-    company: "",
-    phone: "",
-  });
+     });
     
  //function to handle changes in the inputs
   const handleChange = (e) => {
