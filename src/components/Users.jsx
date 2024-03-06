@@ -1,34 +1,32 @@
 // import React from 'react'
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-
-
-const Users = ({setId}) => {
+const Users = ({ setId }) => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [deleteData, setDeleteData] = useState([]);
   useEffect(() => {
     //using axios to get data from the api
     axios
-      .get("https://65d9dcb6bcc50200fcdc38d3.mockapi.io/users")
+      .get("https://65e896934bb72f0a9c4fd9f9.mockapi.io/users")
       .then((res) => setUsers(res.data));
   }, [deleteData]);
 
   //function to handle navigation
   const handleEdit = (id) => {
-    setId(id)
-    
-    navigate(`/edit/${id}`)
-  }
+    setId(id);
+
+    navigate(`/edit/${id}`);
+  };
   //delete function axios
   const handleDel = (id) => {
     axios
-      .delete(`https://65d9dcb6bcc50200fcdc38d3.mockapi.io/users/${id}`)
+      .delete(`https://65e896934bb72f0a9c4fd9f9.mockapi.io/users/${id}`)
       .then((res) => setDeleteData(res.data))
       .catch((err) => console.log(err));
-  }
+  };
   return (
     //the data can be displayed in the table
     <div className="container user">
@@ -57,12 +55,26 @@ const Users = ({setId}) => {
                 <td>{item.website}</td>
                 <td>{item.company}</td>
                 <td>{item.phone}</td>
-                
+
                 <td>
-                  <button className='btn btn-primary' onClick={()=>{handleEdit(item.id)}}>Edit</button>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => {
+                      handleEdit(item.id);
+                    }}
+                  >
+                    Edit
+                  </button>
                 </td>
                 <td>
-                  <button className='btn btn-danger' onClick={()=>{handleDel(item.id)}}>Delete</button>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => {
+                      handleDel(item.id);
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
@@ -71,6 +83,6 @@ const Users = ({setId}) => {
       </div>
     </div>
   );
-}
+};
 
-export default Users
+export default Users;

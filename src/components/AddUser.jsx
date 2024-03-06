@@ -1,17 +1,14 @@
-
-
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AddUser = () => {
-    //using useNavigate  to redirect to the user page
-    const navigate = useNavigate();
-    //using useState to manage the state of the input fields
-  const [createData, setCreateData] = useState({
-     });
-    
- //function to handle changes in the inputs
+  //using useNavigate  to redirect to the user page
+  const navigate = useNavigate();
+  //using useState to manage the state of the input fields
+  const [createData, setCreateData] = useState({});
+
+  //function to handle changes in the inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCreateData((prevData) => ({
@@ -20,12 +17,12 @@ const AddUser = () => {
     }));
   };
 
-    //post  request to add a new user using axios
+  //post  request to add a new user using axios
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://65d9dcb6bcc50200fcdc38d3.mockapi.io/users",
+        "https://65e896934bb72f0a9c4fd9f9.mockapi.io/users",
         createData
       );
       console.log(response.data);
@@ -35,14 +32,14 @@ const AddUser = () => {
     }
   };
 
-    return (
-      //Form with all the necessary fields for adding a new user
+  return (
+    //Form with all the necessary fields for adding a new user
     <form
       className="container mt-5 text-center userWidth"
       // style={{ width: "30rem" }}
       onSubmit={handleSubmit}
     >
-        <div className="row mb-5">
+      <div className="row mb-5">
         <label htmlFor="name" className="col-sm-2 col-form-label">
           Name:
         </label>
